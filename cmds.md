@@ -4,7 +4,7 @@
 
 ### Sneak Attack
 
-Usage: `!a [aname] sneak`
+Usage: `!a [aname] sneakattack`
 
 ```
 !servsnippet sneakattack {{ l = get("RogueLevel") }} {{ '-title "[name] makes a sneak attack with [aname]!" -d "' + str(ceil(l / 2)) + 'd6[Sneak Attack]" -f "Sneak Attack|Rogue Level ' + str(l) + '"' if l else '-f "Sneak Attack|You\'re not a rogue!"' }}
