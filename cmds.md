@@ -56,7 +56,7 @@ Usage: `!a [aname] ss`
 
 ## Spells
 
-### Thorn Whip]
+### Thorn Whip
 
 Usage: `!thwhip`
 
@@ -67,7 +67,7 @@ Usage: `!thwhip`
 {{ crit = roll.raw[0]["is_crit"] }}
 {{ ct = ct * 2 if crit else ct }}
 {{ dmg = vroll(f"{ct}d6[piercing]") }}
--title "{{f"{name} uses Thorn Whip!"}}"
+-title "{{f"{name} casts Thorn Whip!"}}"
 -f "Attack|{{f"**To Hit**: {str(roll)}{', critical hit!' if crit else ''}\n**Damage**: {str(dmg)}"}}"
 -thumb {{ image }}
 -color #0a6b12
