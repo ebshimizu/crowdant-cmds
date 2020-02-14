@@ -42,3 +42,21 @@ Usage: `!a [aname] ss`
 ```
 !servsnippet ss -b "-5[Sharpshooter]" -d "10[Sharpshooter]" -f "Feat Used|Sharpshooter"
 ```
+
+## Spells
+
+### Thorn Whip
+
+```
+!serveralias thwhip embed {{ roll = vroll(f"1d20 + {spell + proficiencyBonus}") }}
+{{ lv = level }}
+{{ ct = 4 if lv >= 17 else (3 if lv >= 11 else (2 if lv >= 5 else 1)) }}
+{{ crit = roll.raw[0]["is_crit"] }}
+{{ ct = ct * 2 if crit else ct }}
+{{ dmg = vroll(f"{ct}d6[piercing]") }}
+-title "{{f"{name} uses Thorn Whip!"}}"
+-f "Attack|{{f"**To Hit**: {str(roll)}{', critical hit!' if crit else ''}\n**Damage**: {str(dmg)}"}}"
+-thumb {{ image }}
+-color #0a6b12
+-desc "You create a long, vine-like whip covered in thorns that lashes out at your command toward a creature in range. If the attack hits, the creature takes damage, and if the creature is Large or smaller, you pull the creature up to 10 feet closer to you."
+```
