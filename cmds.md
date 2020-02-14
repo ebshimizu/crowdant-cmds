@@ -1,5 +1,16 @@
 # Commands
 
+### Report Result
+
+Usage: `!report [value] [reason]`
+
+```
+!serveralias report embed
+-title "Reporting real roll for {{ name }}"
+-f "Result|**%1%** total for %2%"
+-thumb {{ image }}
+```
+
 ## Attack Modifiers
 
 ### Sneak Attack
