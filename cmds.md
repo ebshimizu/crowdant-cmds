@@ -45,7 +45,9 @@ Usage: `!a [aname] ss`
 
 ## Spells
 
-### Thorn Whip
+### Thorn Whip]
+
+Usage: `!thwhip`
 
 ```
 !serveralias thwhip embed {{ roll = vroll(f"1d20 + {spell + proficiencyBonus}") }}
