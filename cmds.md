@@ -11,6 +11,22 @@ Usage: `!report [value] [reason]`
 -thumb {{ image }}
 ```
 
+### Health Potion
+
+```
+!serveralias hpot embed
+{{ mods = {"reg" : 2, "greater" : 4, "superior" : 8, "supreme" : 20 } }}
+{{ die = {"reg" : 2, "greater" : 4, "superior" : 8, "supreme" : 10 } }}
+{{ render = {"reg" : "", "greater" : "Greater", "superior" : "Superior", "supreme" : "Supreme" } }}
+{{ args = &ARGS& }}
+{{ level = args[0] if len(args) else "reg" }}
+{{ r = vroll(f"{die[level]}d4+{mods[level]}") }}
+-title "{{f"{name} uses a {render[level]} Potion of Healing"}}"
+-f "{{f"HP Recovered|{str(r)}"}}"
+-color #00FF00
+-thumb {{ image }}
+```
+
 ## Attack Modifiers
 
 ### Sneak Attack
@@ -25,11 +41,12 @@ Usage: `!a [aname] sa`
 
 Usage: `!smite [slot level] [optional args]`
 Optional args:
+
 - `crit` indicates a critical hit. Dice will be doubled.
 - `undead` indicates a strike against an undead or fiend. 1d8 added automatically.
 
 ```
-!serveralias smite2 embed {{ isPld = get("PaladinLevel") }}
+!serveralias smite embed {{ isPld = get("PaladinLevel") }}
 {{ crit = any([x == 'crit' for x in &ARGS&]) }}
 {{ dead = any([x == 'undead' for x in &ARGS&]) }}
 {{ l = %1% if not dead else %1% + 1 }}
@@ -64,7 +81,7 @@ Usage: `!thwhip`
 !serveralias thwhip embed {{ roll = vroll(f"1d20 + {spell + proficiencyBonus}") }}
 {{ lv = level }}
 {{ ct = 4 if lv >= 17 else (3 if lv >= 11 else (2 if lv >= 5 else 1)) }}
-{{ crit = roll.raw[0]["is_crit"] }}
+{{ crit = roll.raw[0]["value"] == 20 }}
 {{ ct = ct * 2 if crit else ct }}
 {{ dmg = vroll(f"{ct}d6[piercing]") }}
 -title "{{f"{name} casts Thorn Whip!"}}"
