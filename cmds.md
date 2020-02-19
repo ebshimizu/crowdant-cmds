@@ -7,7 +7,7 @@ Usage: `!report [value] [reason]`
 ```
 !serveralias report embed
 -title "Reporting real roll for {{ name }}"
--f "Result|**%1%** total for %2%"
+-f "Result|**%1%** total for &2&"
 -thumb {{ image }}
 ```
 
