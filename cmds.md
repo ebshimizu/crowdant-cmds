@@ -17,11 +17,11 @@ Usage: `!report [value] [reason]`
 !serveralias hpot embed
 {{ mods = {"reg" : 2, "greater" : 4, "superior" : 8, "supreme" : 20 } }}
 {{ die = {"reg" : 2, "greater" : 4, "superior" : 8, "supreme" : 10 } }}
-{{ render = {"reg" : "", "greater" : "Greater", "superior" : "Superior", "supreme" : "Supreme" } }}
+{{ render = {"reg" : "", "greater" : "Greater ", "superior" : "Superior ", "supreme" : "Supreme " } }}
 {{ args = &ARGS& }}
 {{ level = args[0] if len(args) else "reg" }}
 {{ r = vroll(f"{die[level]}d4+{mods[level]}") }}
--title "{{f"{name} uses a {render[level]} Potion of Healing"}}"
+-title "{{f"{name} uses a {render[level]}Potion of Healing"}}"
 -f "{{f"HP Recovered|{str(r)}"}}"
 -color #00FF00
 -thumb {{ image }}
