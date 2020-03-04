@@ -71,6 +71,12 @@ Usage: `!a [aname] ss`
 !servsnippet ss -b "-5[Sharpshooter]" -d "10[Sharpshooter]" -f "Feat Used|Sharpshooter"
 ```
 
+### Sacred Weapon
+
+```
+!snippet sw -b "3[Sacred Weapon]" -d "3[Sacred Weapon]" -f "Feat Used|Sacred Weapon"
+```
+
 ## Spells
 
 ### Thorn Whip
