@@ -29,6 +29,12 @@ Usage: `!report [value] [reason]`
 
 ## Attack Modifiers
 
+### Shadow Blade
+
+Usage: Character adds a custom attack. Have them copy + paste the following.
+
+```!a add "Shadow Blade" -d 2d8[psychic] -b "{{ dexterityMod + proficiencyBonus }}"```
+
 ### Sneak Attack
 
 Usage: `!a [aname] sa`
