@@ -67,6 +67,12 @@ Optional args:
 -color #FFD700
 ```
 
+### Flame Arrows
+
+```
+!snippet fa -d "1d6[fire]" -f "Bonus Damage|Flame Arrows"
+```
+
 ## Feats
 
 ### Sharpshooter
