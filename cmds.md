@@ -76,7 +76,7 @@ Optional args:
 ### Hunter's Mark
 
 ```
-!snippet fa -d "1d6" -f "Bonus Damage|Hunter's Mark"
+!snippet hm -d "1d6" -f "Bonus Damage|Hunter's Mark"
 ```
 
 ## Feats
