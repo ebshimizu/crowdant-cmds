@@ -73,6 +73,11 @@ Optional args:
 !snippet fa -d "1d6[fire]" -f "Bonus Damage|Flame Arrows"
 ```
 
+### Hunter's Mark
+
+```
+!snippet fa -d "1d6" -f "Bonus Damage|Hunter's Mark"
+
 ## Feats
 
 ### Sharpshooter
