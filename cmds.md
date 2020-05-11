@@ -102,14 +102,14 @@ Usage: `!a [aname] ss`
 Usage: `!thwhip`
 
 ```
-!serveralias thwhip embed {{ roll = vroll(f"1d20 + {spell + proficiencyBonus}") }}
+!serveralias thwhip embed {{ r = vroll(f"1d20 + {spell + proficiencyBonus}") }}
 {{ lv = level }}
 {{ ct = 4 if lv >= 17 else (3 if lv >= 11 else (2 if lv >= 5 else 1)) }}
-{{ crit = roll.raw[0]["value"] == 20 }}
+{{ crit = r.result.crit == 1 }}
 {{ ct = ct * 2 if crit else ct }}
 {{ dmg = vroll(f"{ct}d6[piercing]") }}
 -title "{{f"{name} casts Thorn Whip!"}}"
--f "Attack|{{f"**To Hit**: {str(roll)}{', critical hit!' if crit else ''}\n**Damage**: {str(dmg)}"}}"
+-f "Attack|{{f"**To Hit**: {str(r)}{', critical hit!' if crit else ''}\n**Damage**: {str(dmg)}"}}"
 -thumb {{ image }}
 -color #0a6b12
 -desc "You create a long, vine-like whip covered in thorns that lashes out at your command toward a creature in range. If the attack hits, the creature takes damage, and if the creature is Large or smaller, you pull the creature up to 10 feet closer to you."
